@@ -74,7 +74,7 @@
 		animate(0, this.__BG, { scale: 1, opacity: 1 }, 800, "easeOutQuint");
 
 		var yStart = 180;
-		var yEnd = 75;
+		var yEnd = 43;
 
 		this.__branding.css({ top: yStart, left: 0, width: this.__width, height: 91, opacity: 1 });
 		animate(200, this.__branding, { top: yEnd }, 700, "easeInOutQuad");
