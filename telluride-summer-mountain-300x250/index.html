@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+    <meta name="viewport" content="width=160, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="ad.size" content="width=300,height=250">
+
+    <title>Telluride: Most Colorado Place on Earth 300x250</title>
+
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+    <script src="js/banner.js" type="text/javascript"></script>
+    <!--<Deject>-->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/ScrubGSAPTimeline.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+		<script src="js/jquery.transit.min.js"></script>
+    <!--</Deject>-->
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div id = "container">
+    		<div id = "border" class = "pos-absolute"></div>
+	    	<div id = "banner" class = "pos-absolute">
+		    	<div id = "content" class = "pos-absolute">
+
+		    		<div id = "BG" class = "animated-content"></div>
+		    		<div id = "branding" class = "mask animated-content">
+		    			<div id = "logo-telluride" class = "animated-content"></div>
+		    		</div>
+
+			    	<div id = "cta" class = "animated-content">
+			    		<div id = "cta-BG" class = "animated-content"></div>
+			    		<div id = "cta-one" class = "animated-content"></div>
+			    		<div id = "cta-two" class = "animated-content"></div>
+			    	</div>
+		    	</div>
+	    	</div>
+
+	    	<div id="bg-exit" class = "pos-absolute"></div>
+	    </div>
+
+      <script type="text/javascript">
+
+			var clickTag = "http://www.visittelluride.com/";
+
+      $(document).ready(function()
+			{
+				if (Enabler.isInitialized())
+				{
+					enablerInitComplete();
+				} else {
+					Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitComplete);
+				}
+
+				function enablerInitComplete()
+				{
+					if (Enabler.isPageLoaded())
+					{
+					    pageLoadComplete();
+					} else {
+						Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, pageLoadComplete);
+					}
+
+					function pageLoadComplete()
+					{
+					  var banner = new Banner();
+						banner.render();
+					}
+				}
+			});
+
+		</script>
+  </body>
+</html>
