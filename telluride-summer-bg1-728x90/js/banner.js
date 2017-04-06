@@ -9,8 +9,8 @@
 
 	Banner.prototype.init = function () {
 		this.__allowHoverEffect = false;
-		this.__width = 300;
-		this.__height = 250;
+		this.__width = 728;
+		this.__height = 90;
 		this.start();
 	};
 
@@ -52,7 +52,7 @@
 		this.__content.css({ top: -stroke, left: -stroke, width: w, height: h });
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
-		this.__BG.css({ transformOrigin: '88px 166px' });
+		this.__BG.css({transformOrigin: '412px 83px'});
 		// this.__logoTelluride.css({transformOrigin: '219px 36px'});
 		//this.__cta.css({transformOrigin: '80px 330px'});
 	};
@@ -73,8 +73,8 @@
 		this.__BG.css({ top: 0, left: 0, opacity: 0, scale: 1.5 });
 		animate(0, this.__BG, { scale: 1, opacity: 1 }, 800, "easeOutQuint");
 
-		var yStart = 180;
-		var yEnd = 43;
+		var yStart = 90;
+		var yEnd = 0;
 
 		this.__branding.css({ top: yStart, left: 0, width: this.__width, height: 91, opacity: 1 });
 		animate(200, this.__branding, { top: yEnd }, 700, "easeInOutQuad");
@@ -92,24 +92,39 @@
 
 	// show cta 1
 	Banner.prototype.showCta = function () {
-		this.__ctaBG.css({ top: 0, left: 0, opacity: 1 });
-		this.__ctaOne.css({ top: 0, left: 0, opacity: 1 });
+		this.__ctaBG.css({ top: 32, right: 0, opacity: 1 });
+		this.__ctaOne.css({ top: 32, right: 3, opacity: 1 });
+		this.__ctaTwo.css({ opacity: 0 });
+		this.__cta.css({ top: 0, right: 0, opacity: 0, scale: 1, height: 90 });
 
-		this.__cta.css({ top: 175, left: 0, opacity: 0, scale: 1, height: 75 });
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
-			banner.showResolve();
+			banner.showCta2();
 		}, 1500);
 	};
 
 	//-------------------------------------------------------------------------
 
+
+	// show cta2
+	Banner.prototype.showCta2 = function () {
+		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
+		animate(0, this.__cta, { right: -120 }, 1000, "easeOutQuart");
+
+		var banner = this;
+		setTimeout(function () {
+			banner.showResolve();
+		}, 700);
+	};
+
+	//-------------------------------------------------------------------------
+
+
 	// show resolve
 	Banner.prototype.showResolve = function () {
-		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
-		animate(0, this.__ctaTwo, { top: 0, left: 0, opacity: 1 }, 1000, "easeOutQuart");
+		animate(0, this.__ctaTwo, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
