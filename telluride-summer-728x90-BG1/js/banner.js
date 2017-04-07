@@ -53,8 +53,6 @@
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
 		this.__BG.css({transformOrigin: '412px 83px'});
-		// this.__logoTelluride.css({transformOrigin: '219px 36px'});
-		//this.__cta.css({transformOrigin: '80px 330px'});
 	};
 
 	//-------------------------------------------------------------------------
