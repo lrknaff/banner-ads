@@ -91,7 +91,7 @@
 	// show cta 1
 	Banner.prototype.showCta = function () {
 		this.__ctaBG.css({ top: 515, right: 0, opacity: 1 });
-		this.__ctaTwo.css({ opacity: 0 });
+		this.__ctaOne.css({ opacity: 1 });
 		this.__cta.css({ top: 0, right: 0, opacity: 0, scale: 1, height: 600 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
