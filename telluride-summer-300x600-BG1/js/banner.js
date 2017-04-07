@@ -91,28 +91,29 @@
 	// show cta 1
 	Banner.prototype.showCta = function () {
 		this.__ctaBG.css({ top: 515, right: 0, opacity: 1 });
-		this.__ctaOne.css({ opacity: 1 });
+		this.__ctaOne.css({ top: 525, opacity: 1 });
+		this.__ctaTwo.css({ top: 535, opacity: 0 });
 		this.__cta.css({ top: 0, right: 0, opacity: 0, scale: 1, height: 600 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
 
-		// var banner = this;
-		// setTimeout(function () {
-		// 	banner.showCta2();
-		// }, 1500);
+		var banner = this;
+		setTimeout(function () {
+			banner.hideCta();
+		}, 1500);
 	};
 
 	//-------------------------------------------------------------------------
 
 
 	// show cta2
-	Banner.prototype.showCta2 = function () {
+	Banner.prototype.hideCta = function () {
 		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
 
-		// var banner = this;
-		// setTimeout(function () {
-		// 	banner.showResolve();
-		// }, 700);
+		var banner = this;
+		setTimeout(function () {
+			banner.showResolve();
+		}, 700);
 	};
 
 	//-------------------------------------------------------------------------

@@ -37,16 +37,16 @@
   width: 266px; }
 
 #container #cta-one {
-  background: transparent url("../images/sprite.png") 0 -11px no-repeat;
+  background: transparent url("../images/sprite.png") 0 4px no-repeat;
   height: 30px;
-  width: 241px; }
+  right: 26px;
+  width: 150px; }
 
 #container #cta-two {
-  background: transparent url("../images/sprite.png") 0 0 no-repeat;
+  background: transparent url("../images/sprite.png") 0 -73px no-repeat;
   height: 15px;
-  width: 200px;
-  right: 140px;
-  top: 40px; }
+  width: 150px;
+  right: 16px; }
 
 #container #logo-telluride {
   background: transparent url("../images/sprite.png") 0 -211px no-repeat;
