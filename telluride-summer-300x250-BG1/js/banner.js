@@ -164,14 +164,24 @@
 
 	Banner.prototype.onMouseOver = function()
 	{
-		animate(100, this.__ctaTwo, {opacity:0}, 150, "easeOutQuart");
-		animate(0, this.__ctaHover, {opacity:1}, 150, "easeOutQuart");
+		let trigger = $('#cta-one').css('opacity')
+		if (trigger === "0") {
+			animate(100, this.__ctaTwo, {opacity:0}, 150, "easeOutQuart");
+			animate(0, this.__ctaHover, {opacity:1}, 150, "easeOutQuart");
+		} else {
+			this.__ctaHover.css({opacity:0});
+		}
 	};
 
 	Banner.prototype.onMouseOut = function()
 	{
-		animate(25, this.__ctaTwo, {opacity:1}, 150, "easeOutQuart");
-		animate(125, this.__ctaHover, {opacity:0}, 150, "easeOutQuart");
+		let trigger = $('#cta-one').css('opacity')
+		if (trigger === "0") {
+			animate(25, this.__ctaTwo, {opacity:1}, 150, "easeOutQuart");
+			animate(125, this.__ctaHover, {opacity:0}, 150, "easeOutQuart");
+		} else {
+			this.__ctaHover.css({opacity:0});
+		}
 	};
 
 	Banner.prototype.clickThrough = function () {
