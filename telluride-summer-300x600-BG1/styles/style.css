@@ -48,6 +48,12 @@
   width: 150px;
   right: 16px; }
 
+#container #cta-hover {
+  background: transparent url("../images/sprite.png") -181px -73px no-repeat;
+  height: 15px;
+  width: 150px;
+  right: 16px; }
+
 #container #logo-telluride {
   background: transparent url("../images/sprite.png") 0 -211px no-repeat;
   height: 100px;
