@@ -47,9 +47,9 @@
   width: 88px;
   right: 140px;
   top: 40px; }
-  
-#container #cta-two {
-  background: transparent url("../images/sprite.png") 0 0 no-repeat;
+
+#container #cta-hover {
+  background: transparent url("../images/sprite.png") 0 -220px no-repeat;
   height: 15px;
   width: 88px;
   right: 140px;
