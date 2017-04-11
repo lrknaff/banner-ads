@@ -40,6 +40,9 @@
 #container #cta-two {
   background: transparent url("../images/sprite.png") left 10px top -55px no-repeat; }
 
+#container #cta-hover {
+  background: transparent url("../images/sprite.png") left 10px top -495px no-repeat; }
+
 #container #logo-telluride {
   background: transparent url("../images/sprite.png") left -27px top -208px no-repeat; }
 
