@@ -37,6 +37,7 @@
 		this.__ctaBG = $("#cta-BG");
 		this.__ctaOne = $("#cta-one");
 		this.__ctaTwo = $("#cta-two");
+		this.__ctaHover = $("#cta-hover");
 
 		this.__bgExit = $("#bg-exit");
 	};
@@ -53,6 +54,7 @@
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
 		this.__BG.css({transformOrigin: '118px 458px'});
+		this.__ctaHover.css({top: 535, opacity:0});
 	};
 
 	//-------------------------------------------------------------------------
@@ -83,7 +85,7 @@
 		var banner = this;
 		setTimeout(function () {
 			banner.showCta();
-		}, 1000);
+		}, 4000);
 	};
 
 	//-------------------------------------------------------------------------
@@ -100,7 +102,7 @@
 		var banner = this;
 		setTimeout(function () {
 			banner.hideCta();
-		}, 1500);
+		}, 4000);
 	};
 
 	//-------------------------------------------------------------------------
@@ -144,12 +146,44 @@
 
 	//-------------------------------------------------------------------------
 
-	Banner.prototype.defineInteraction = function () {
+	Banner.prototype.defineInteraction = function()
+	{
 		var banner = this;
 		var offset = 4;
-		this.__bgExit.click(function () {
+		this.__bgExit.click(function()
+		{
 			banner.clickThrough();
 		});
+		this.__bgExit.mouseover(function()
+		{
+			banner.onMouseOver();
+		});
+		this.__bgExit.mouseout(function()
+		{
+			banner.onMouseOut();
+		});
+	};
+
+	Banner.prototype.onMouseOver = function()
+	{
+		let trigger = $('#cta-one').css('opacity')
+		if (trigger === "0") {
+			animate(100, this.__ctaTwo, {opacity:0}, 150, "easeOutQuart");
+			animate(0, this.__ctaHover, {opacity:1}, 150, "easeOutQuart");
+		} else {
+			this.__ctaHover.css({opacity:0});
+		}
+	};
+
+	Banner.prototype.onMouseOut = function()
+	{
+		let trigger = $('#cta-one').css('opacity')
+		if (trigger === "0") {
+			animate(25, this.__ctaTwo, {opacity:1}, 150, "easeOutQuart");
+			animate(125, this.__ctaHover, {opacity:0}, 150, "easeOutQuart");
+		} else {
+			this.__ctaHover.css({opacity:0});
+		}
 	};
 
 	Banner.prototype.clickThrough = function () {
