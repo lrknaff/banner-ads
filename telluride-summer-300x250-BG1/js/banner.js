@@ -85,7 +85,7 @@
 		var banner = this;
 		setTimeout(function () {
 			banner.showCta();
-		}, 4000);
+		}, 2500);
 	};
 
 	//-------------------------------------------------------------------------
@@ -102,26 +102,26 @@
 		var banner = this;
 		setTimeout(function () {
 			banner.hideCta();
-		}, 4000);
+		}, 2000);
 	};
 
 	//-------------------------------------------------------------------------
 
 	// hide cta 1
 	Banner.prototype.hideCta = function () {
-		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
+		animate(0, this.__ctaOne, { opacity: 0 }, 500, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
 			banner.showResolve();
-		}, 1000);
+		}, 200);
 	};
 
 	//-------------------------------------------------------------------------
 
 	// show resolve
 	Banner.prototype.showResolve = function () {
-		animate(0, this.__ctaTwo, { opacity: 1 }, 700, "easeOutQuart");
+		animate(0, this.__ctaTwo, { opacity: 1 }, 500, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
