@@ -101,27 +101,16 @@
 
 		var banner = this;
 		setTimeout(function () {
-			banner.hideCta();
-		}, 2000);
-	};
-
-	//-------------------------------------------------------------------------
-
-	// hide cta 1
-	Banner.prototype.hideCta = function () {
-		animate(0, this.__ctaOne, { opacity: 0 }, 500, "easeOutQuart");
-
-		var banner = this;
-		setTimeout(function () {
 			banner.showResolve();
-		}, 200);
+		}, 2000);
 	};
 
 	//-------------------------------------------------------------------------
 
 	// show resolve
 	Banner.prototype.showResolve = function () {
-		animate(0, this.__ctaTwo, { opacity: 1 }, 500, "easeOutQuart");
+		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
+		animate(0, this.__ctaTwo, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
