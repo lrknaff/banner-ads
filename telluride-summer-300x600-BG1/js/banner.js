@@ -54,7 +54,7 @@
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
 		this.__BG.css({transformOrigin: '118px 458px'});
-		this.__ctaHover.css({top: 525, opacity:0});
+		this.__ctaHover.css({top: 505, opacity:0});
 	};
 
 	//-------------------------------------------------------------------------
@@ -92,9 +92,9 @@
 
 	// show cta 1
 	Banner.prototype.showCta = function () {
-		this.__ctaBG.css({ top: 505, right: 0, opacity: 1 });
-		this.__ctaOne.css({ top: 515, opacity: 1 });
-		this.__ctaTwo.css({ top: 525, opacity: 0 });
+		this.__ctaBG.css({ top: 485, right: 0, opacity: 1 });
+		this.__ctaOne.css({ top: 495, opacity: 1 });
+		this.__ctaTwo.css({ top: 505, opacity: 0 });
 		this.__cta.css({ top: 0, right: 0, opacity: 0, scale: 1, height: 600 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
