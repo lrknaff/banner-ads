@@ -110,8 +110,7 @@
 
 	// show cta2
 	Banner.prototype.showCta2 = function () {
-		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
-		animate(0, this.__ctaBG, { width: 200 }, 1000, "easeOutQuart");
+		animate(0, this.__ctaOne, { opacity: 0 }, 500, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
@@ -125,6 +124,7 @@
 	// show resolve
 	Banner.prototype.showResolve = function () {
 		animate(0, this.__ctaTwo, { opacity: 1 }, 1000, "easeOutQuart");
+		animate(0, this.__ctaBG, { width: 200 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
