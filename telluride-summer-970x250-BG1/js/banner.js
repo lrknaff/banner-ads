@@ -9,8 +9,8 @@
 
 	Banner.prototype.init = function () {
 		this.__allowHoverEffect = false;
-		this.__width = 728;
-		this.__height = 90;
+		this.__width = 970;
+		this.__height = 250;
 		this.start();
 	};
 
@@ -37,6 +37,7 @@
 		this.__ctaBG = $("#cta-BG");
 		this.__ctaOne = $("#cta-one");
 		this.__ctaTwo = $("#cta-two");
+		this.__ctaHover = $("#cta-hover");
 
 		this.__bgExit = $("#bg-exit");
 	};
@@ -53,8 +54,7 @@
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
 		this.__BG.css({transformOrigin: '412px 83px'});
-		// this.__logoTelluride.css({transformOrigin: '219px 36px'});
-		//this.__cta.css({transformOrigin: '80px 330px'});
+		this.__ctaHover.css({top: -60, left: 21, opacity:0});
 	};
 
 	//-------------------------------------------------------------------------
@@ -73,10 +73,10 @@
 		this.__BG.css({ top: 0, left: 0, opacity: 0, scale: 1.5 });
 		animate(0, this.__BG, { scale: 1, opacity: 1 }, 800, "easeOutQuint");
 
-		var yStart = 90;
-		var yEnd = 0;
+		var yStart = 200;
+		var yEnd = 60;
 
-		this.__branding.css({ top: yStart, left: 0, width: this.__width, height: 91, opacity: 1 });
+		this.__branding.css({ top: yStart, left: 0, width: this.__width, height: 110, opacity: 1 });
 		animate(200, this.__branding, { top: yEnd }, 700, "easeInOutQuad");
 
 		this.__logoTelluride.css({ top: -yStart, left: 0, opacity: 0, scale: 1.4 });
@@ -93,9 +93,9 @@
 	// show cta 1
 	Banner.prototype.showCta = function () {
 		this.__ctaBG.css({ top: 32, right: 0, opacity: 1 });
-		this.__ctaOne.css({ top: 32, right: 3, opacity: 1 });
-		this.__ctaTwo.css({ opacity: 0 });
-		this.__cta.css({ top: 0, right: 0, opacity: 0, scale: 1, height: 90 });
+		this.__ctaOne.css({ top: 0, left: 21, opacity: 1 });
+		this.__ctaTwo.css({ top: -30, left: 21, opacity: 0 });
+		this.__cta.css({ top: 161, right: 0, opacity: 0, scale: 1, height: 90 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
 
@@ -111,12 +111,12 @@
 	// show cta2
 	Banner.prototype.showCta2 = function () {
 		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
-		animate(0, this.__cta, { right: -120 }, 1000, "easeOutQuart");
+		animate(0, this.__ctaBG, { width: 200 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
 			banner.showResolve();
-		}, 700);
+		}, 200);
 	};
 
 	//-------------------------------------------------------------------------
@@ -147,14 +147,45 @@
 
 	//-------------------------------------------------------------------------
 
-	Banner.prototype.defineInteraction = function () {
+	Banner.prototype.defineInteraction = function()
+	{
 		var banner = this;
 		var offset = 4;
-		this.__bgExit.click(function () {
+		this.__bgExit.click(function()
+		{
 			banner.clickThrough();
+		});
+		this.__bgExit.mouseover(function()
+		{
+			banner.onMouseOver();
+		});
+		this.__bgExit.mouseout(function()
+		{
+			banner.onMouseOut();
 		});
 	};
 
+	Banner.prototype.onMouseOver = function()
+	{
+		let trigger = $('#cta-one').css('opacity')
+		if (trigger === "0") {
+			animate(100, this.__ctaTwo, {opacity:0}, 150, "easeOutQuart");
+			animate(0, this.__ctaHover, {opacity:1}, 150, "easeOutQuart");
+		} else {
+			this.__ctaHover.css({opacity:0});
+		}
+	};
+
+	Banner.prototype.onMouseOut = function()
+	{
+		let trigger = $('#cta-one').css('opacity')
+		if (trigger === "0") {
+			animate(25, this.__ctaTwo, {opacity:1}, 150, "easeOutQuart");
+			animate(125, this.__ctaHover, {opacity:0}, 150, "easeOutQuart");
+		} else {
+			this.__ctaHover.css({opacity:0});
+		}
+	};
 	Banner.prototype.clickThrough = function () {
 		trace("click through: " + window.clickTag);
 		window.open(window.clickTag);
