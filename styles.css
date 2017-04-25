@@ -71,3 +71,11 @@ body {
   @media screen and (max-width: 780px) {
     .desktop {
       display: block; } }
+
+#hide {
+  display: none;
+}
+
+h2 {
+  cursor: pointer;
+}
