@@ -32,7 +32,7 @@ body {
       padding: 0 0 10px; }
       .sidebar ul li a {
         color: #d36135;
-        font-size: 12px; }
+        font-size: 11px; }
         .sidebar ul li a:hover {
           text-decoration: none; }
         .sidebar ul li a.done {
@@ -84,8 +84,4 @@ h1 {
 h2 {
   cursor: pointer;
   font-size: 18px;
-}
-
-li {
-  font-size: 16px;
 }
