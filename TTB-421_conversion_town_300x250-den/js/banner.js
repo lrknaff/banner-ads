@@ -36,6 +36,8 @@
 		this.__cta = $("#cta");
 		this.__ctaBG = $("#cta-BG");
 		this.__ctaOne = $("#cta-one");
+		this.__ctaLocation = $("#cta-location");
+		this.__ctaLodging = $("#cta-lodging");
 		this.__ctaTwo = $("#cta-two");
 		this.__ctaHover = $("#cta-hover");
 
@@ -54,6 +56,7 @@
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
 		this.__BG.css({ transformOrigin: '88px 166px' });
+		this.__cta.css({ top: 175, left: 0, opacity: 0, scale: 1, height: 75 });
 		this.__ctaHover.css({top:0, left:0, opacity:0});
 	};
 
@@ -84,32 +87,54 @@
 
 		var banner = this;
 		setTimeout(function () {
-			banner.showCta();
+			banner.showCta1();
 		}, 2500);
 	};
 
 	//-------------------------------------------------------------------------
-
-	// show cta 1
-	Banner.prototype.showCta = function () {
+	//show cta1
+	Banner.prototype.showCta1 = function () {
 		this.__ctaBG.css({ top: 0, left: 0, opacity: 1 });
 		this.__ctaOne.css({ top: 0, left: 0, opacity: 1 });
+		this.__ctaLocation.css({ top: 0, left: 0, opacity: 0 });
+		this.__ctaLodging.css({ top: 0, left: 0, opacity: 0 });
 		this.__ctaTwo.css({ top: 0, left: 0, opacity: 0 });
 
-		this.__cta.css({ top: 175, left: 0, opacity: 0, scale: 1, height: 75 });
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
-			banner.showResolve();
+			banner.showLocation();
 		}, 2000);
+	};
+
+	//show location
+	Banner.prototype.showLocation = function () {
+		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
+		animate(0, this.__ctaLocation, { opacity: 1 }, 1000, "easeOutQuart");
+
+		var banner = this;
+		setTimeout(function () {
+			banner.showLodging();
+		}, 2500);
+	};
+
+	//show lodging
+	Banner.prototype.showLodging = function () {
+		animate(0, this.__ctaLocation, { opacity: 0 }, 700, "easeOutQuart");
+		animate(0, this.__ctaLodging, { opacity: 1 }, 1000, "easeOutQuart");
+
+		var banner = this;
+		setTimeout(function () {
+			banner.showResolve();
+		}, 2500);
 	};
 
 	//-------------------------------------------------------------------------
 
 	// show resolve
 	Banner.prototype.showResolve = function () {
-		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
+		animate(0, this.__ctaLodging, { opacity: 0 }, 700, "easeOutQuart");
 		animate(0, this.__ctaTwo, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
@@ -153,23 +178,21 @@
 
 	Banner.prototype.onMouseOver = function()
 	{
-		let trigger = $('#cta-one').css('opacity')
-		if (trigger === "0") {
+		if (this.__allowHoverEffect) {
 			animate(100, this.__ctaTwo, {opacity:0}, 150, "easeOutQuart");
 			animate(0, this.__ctaHover, {opacity:1}, 150, "easeOutQuart");
 		} else {
-			this.__ctaHover.css({opacity:0});
+			return null
 		}
 	};
 
 	Banner.prototype.onMouseOut = function()
 	{
-		let trigger = $('#cta-one').css('opacity')
-		if (trigger === "0") {
+		if (this.__allowHoverEffect) {
 			animate(25, this.__ctaTwo, {opacity:1}, 150, "easeOutQuart");
 			animate(125, this.__ctaHover, {opacity:0}, 150, "easeOutQuart");
 		} else {
-			this.__ctaHover.css({opacity:0});
+			return null
 		}
 	};
 

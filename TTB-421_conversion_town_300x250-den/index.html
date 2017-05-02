@@ -3,18 +3,45 @@
   <head>
     <meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
     <meta name="viewport" content="width=160, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <meta name="ad.size" content="width=300,height=250">
+    <meta name="ad.size" content="width=300, height=250">
 
-    <title>Telluride: Most Colorado Place on Earth 300x250</title>
+    <title>Telluride: Conversion - Summer 300x250 (DEN)</title>
 
     <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
-    <script src="js/banner.js" type="text/javascript"></script>
-    <!--<Deject>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
-		<script src="js/jquery.transit.min.js"></script>
-    <!--</Deject>-->
-    <link rel="stylesheet" href="styles/style.css">
+
+    <style>
+      .pos-absolute { position: absolute; }
+
+      .animated-content { position: absolute; overflow: hidden; width: 300px; height: 250px; top: 250px; }
+
+      .mask { position: absolute; overflow: hidden; }
+
+      #bg-exit { background-color: #fff; cursor: pointer; z-index: 99999; }
+
+      #banner { background-color: #fff; overflow: hidden; }
+
+      #border { border: 1px solid #000; opacity: 0; }
+
+      #banner:hover { cursor: hand; }
+
+      #BG { background: transparent url("./images/BG1.jpg") left 0px top 0px no-repeat; }
+
+      #cta-BG { background: transparent url("./images/sprite-den.png") left -27px top -395px no-repeat;}
+
+      #cta-one { background: transparent url("./images/sprite-den.png") left 0px top -138px no-repeat;}
+
+      #cta-location { background: transparent url("./images/sprite-den.png") left 8px top -546px no-repeat; }
+
+      #cta-lodging { background: transparent url("./images/sprite-den.png") left 6px top -604px no-repeat; }
+
+      #cta-two { background: transparent url("./images/sprite-den.png") left 10px top -55px no-repeat; }
+
+      #cta-hover { background: transparent url("./images/sprite-den.png") left 10px top -495px no-repeat; }
+
+      #logo-telluride { background: transparent url("./images/sprite-den.png") left -27px top -208px no-repeat; height: 140px;}
+    </style>
   </head>
+
   <body>
     <div id = "container">
     		<div id = "border" class = "pos-absolute"></div>
@@ -29,6 +56,8 @@
 			    	<div id = "cta" class = "animated-content">
 			    		<div id = "cta-BG" class = "animated-content"></div>
 			    		<div id = "cta-one" class = "animated-content"></div>
+			    		<div id = "cta-location" class = "animated-content"></div>
+			    		<div id = "cta-lodging" class = "animated-content"></div>
 			    		<div id = "cta-two" class = "animated-content"></div>
 			    		<div id = "cta-hover" class = "animated-content"></div>
 			    	</div>
@@ -38,7 +67,10 @@
 	    	<div id="bg-exit" class = "pos-absolute"></div>
 	    </div>
 
-      <script type="text/javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+		<script src="js/jquery.transit.min.js"></script>
+		<script src="js/banner.js"></script>
+		<script type="text/javascript">
 
 			var clickTag = "http://www.visittelluride.com/";
 
