@@ -96,7 +96,8 @@
 		this.__ctaBG.css({ top: 32, right: 0, opacity: 0 });
 		this.__ctaOne.css({ top: 0, left: 0, opacity: 1 });
 		this.__ctaLocation.css({ top: -28, left: 0, opacity: 0 });
-		this.__ctaTwo.css({ top: -25, left: 21, opacity: 0 });
+		this.__ctaTwo.css({ top: -51, left: 0, opacity: 0 });
+		this.__ctaHover.css({ top: 31, left: 178, opacity: 0 });
 		this.__cta.css({ top: 161, right: 0, opacity: 0, scale: 1, height: 90 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
@@ -171,7 +172,6 @@
 	Banner.prototype.onMouseOver = function()
 	{
 		if (this.__allowHoverEffect) {
-			animate(100, this.__ctaTwo, {opacity:0}, 150, "easeOutQuart");
 			animate(0, this.__ctaHover, {opacity:1}, 150, "easeOutQuart");
 		} else {
 			return null
@@ -181,7 +181,6 @@
 	Banner.prototype.onMouseOut = function()
 	{
 		if (this.__allowHoverEffect) {
-			animate(25, this.__ctaTwo, {opacity:1}, 150, "easeOutQuart");
 			animate(125, this.__ctaHover, {opacity:0}, 150, "easeOutQuart");
 		} else {
 			return null
