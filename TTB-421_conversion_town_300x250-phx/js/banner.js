@@ -111,23 +111,23 @@
 	//show location
 	Banner.prototype.showLocation = function () {
 		animate(0, this.__ctaOne, { opacity: 0 }, 700, "easeOutQuart");
-		animate(0, this.__ctaLocation, { opacity: 1 }, 1000, "easeOutQuart");
+		animate(500, this.__ctaLocation, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
 			banner.showLodging();
-		}, 2500);
+		}, 3000);
 	};
 
 	//show lodging
 	Banner.prototype.showLodging = function () {
 		animate(0, this.__ctaLocation, { opacity: 0 }, 700, "easeOutQuart");
-		animate(0, this.__ctaLodging, { opacity: 1 }, 1000, "easeOutQuart");
+		animate(500, this.__ctaLodging, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
 			banner.showResolve();
-		}, 2500);
+		}, 3000);
 	};
 
 	//-------------------------------------------------------------------------
@@ -135,7 +135,7 @@
 	// show resolve
 	Banner.prototype.showResolve = function () {
 		animate(0, this.__ctaLodging, { opacity: 0 }, 700, "easeOutQuart");
-		animate(0, this.__ctaTwo, { opacity: 1 }, 1000, "easeOutQuart");
+		animate(500, this.__ctaTwo, { opacity: 1 }, 1000, "easeOutQuart");
 
 		var banner = this;
 		setTimeout(function () {
