@@ -76,6 +76,16 @@ body {
   display: none;
 }
 
+h1 {
+  font-size: 24px;
+  color: #b02025;
+}
+
 h2 {
   cursor: pointer;
+  font-size: 18px;
+}
+
+li {
+  font-size: 16px;
 }
