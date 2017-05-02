@@ -32,7 +32,7 @@ body {
       padding: 0 0 10px; }
       .sidebar ul li a {
         color: #d36135;
-        font-size: 12px; }
+        font-size: 11px; }
         .sidebar ul li a:hover {
           text-decoration: none; }
         .sidebar ul li a.done {
@@ -71,3 +71,17 @@ body {
   @media screen and (max-width: 780px) {
     .desktop {
       display: block; } }
+
+#hide {
+  display: none;
+}
+
+h1 {
+  font-size: 24px;
+  color: #b02025;
+}
+
+h2 {
+  cursor: pointer;
+  font-size: 18px;
+}

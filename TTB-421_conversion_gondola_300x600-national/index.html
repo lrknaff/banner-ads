@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+    <meta name="viewport" content="width=160, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="ad.size" content="width=300,height=600">
+
+    <title>Telluride: Conversion - Summer 300x600 (NAT)</title>
+
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+    <style>
+      .pos-absolute { position: absolute; }
+
+      .animated-content { position: absolute; overflow: hidden; width: 300px; height: 600px; top: 600px; }
+
+      .mask { position: absolute; overflow: hidden; }
+
+      #bg-exit { background-color: #fff; cursor: pointer; z-index: 99999; }
+
+      #banner { background-color: #fff; overflow: hidden; }
+
+      #border { border: 1px solid #000; opacity: 0; }
+
+      #banner:hover { cursor: hand; }
+
+      #BG { background: transparent url("./images/BG1.jpg") 0 0 no-repeat; }
+
+      #cta-BG { background: transparent url("./images/sprite-national.png") 0 -133px no-repeat; height: 53px; width: 270px; }
+
+      #cta-one { background: transparent url("./images/sprite-national.png") 0 4px no-repeat; height: 50px; right: 26px; width: 228px; }
+
+      #cta-location { background: transparent url("./images/sprite-national.png") 0 -331px no-repeat; height: 36px; width: 181px; right: -3px; }
+
+      #cta-lodging { background: transparent url("./images/sprite-national.png") -167px -331px no-repeat; height: 36px; width: 150px; right: 16px; }
+
+      #cta-two { background: transparent url("./images/sprite-national.png") 0 -73px no-repeat; height: 15px; width: 150px; right: 16px; }
+
+      #cta-hover { background: transparent url("./images/sprite-national.png") -181px -73px no-repeat; height: 15px; width: 150px; right: 16px; }
+
+      #logo-telluride { background: transparent url("./images/sprite-national.png") 0 -211px no-repeat; height: 100px; width: 200px; }
+    </style>
+  </head>
+
+  <body>
+    <div id = "container">
+    		<div id = "border" class = "pos-absolute"></div>
+	    	<div id = "banner" class = "pos-absolute">
+		    	<div id = "content" class = "pos-absolute">
+
+		    		<div id = "BG" class = "animated-content"></div>
+		    		<div id = "branding" class = "mask animated-content">
+		    			<div id = "logo-telluride" class = "animated-content"></div>
+		    		</div>
+
+			    	<div id = "cta" class = "animated-content">
+			    		<div id = "cta-BG" class = "animated-content"></div>
+			    		<div id = "cta-one" class = "animated-content"></div>
+			    		<div id = "cta-location" class = "animated-content"></div>
+			    		<div id = "cta-lodging" class = "animated-content"></div>
+			    		<div id = "cta-two" class = "animated-content"></div>
+			    		<div id = "cta-hover" class = "animated-content"></div>
+			    	</div>
+		    	</div>
+	    	</div>
+
+	    	<div id="bg-exit" class = "pos-absolute"></div>
+	    </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+      <script src="js/jquery.transit.min.js"></script>
+      <script src="js/banner.js"></script>
+      <script type="text/javascript">
+
+			var clickTag = "http://www.visittelluride.com/";
+
+      $(document).ready(function()
+			{
+				if (Enabler.isInitialized())
+				{
+					enablerInitComplete();
+				} else {
+					Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitComplete);
+				}
+
+				function enablerInitComplete()
+				{
+					if (Enabler.isPageLoaded())
+					{
+					    pageLoadComplete();
+					} else {
+						Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, pageLoadComplete);
+					}
+
+					function pageLoadComplete()
+					{
+					  var banner = new Banner();
+						banner.render();
+					}
+				}
+			});
+
+		</script>
+  </body>
+</html>
