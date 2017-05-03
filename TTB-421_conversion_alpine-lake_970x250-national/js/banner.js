@@ -93,11 +93,11 @@
 
 	// show cta 1
 	Banner.prototype.showCta1 = function () {
-		this.__ctaBG.css({ top: 32, right: 0, opacity: 0 });
+		this.__ctaBG.css({ top: 31, right: 0, opacity: 0 });
 		this.__ctaOne.css({ top: 0, left: 0, opacity: 1 });
 		this.__ctaLocation.css({ top: -28, left: 0, opacity: 0 });
 		this.__ctaTwo.css({ top: -51, left: 0, opacity: 0 });
-		this.__ctaHover.css({ top: 31, left: 178, opacity: 0 });
+		this.__ctaHover.css({ top: 31, left: 146, opacity: 0 });
 		this.__cta.css({ top: 161, right: 0, opacity: 0, scale: 1, height: 90 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
