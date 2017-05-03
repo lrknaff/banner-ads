@@ -9,7 +9,7 @@
 
 	Banner.prototype.init = function () {
 		this.__allowHoverEffect = false;
-		this.__width = 300;
+		this.__width = 160;
 		this.__height = 600;
 		this.start();
 	};
@@ -56,7 +56,7 @@
 		this.__bgExit.css({ top: 0, left: 0, width: w, height: h, opacity: 0 });
 
 		this.__BG.css({transformOrigin: '118px 458px'});
-		this.__ctaHover.css({top: 536, opacity:0});
+		this.__ctaHover.css({top: 544, opacity:0});
 	};
 
 	//-------------------------------------------------------------------------
@@ -76,12 +76,12 @@
 		animate(0, this.__BG, { scale: 1, opacity: 1 }, 800, "easeOutQuint");
 
 		var yStart = 90;
-		var yEnd = 45;
+		var yEnd = 25;
 
 		this.__branding.css({ top: yStart, left: 0, width: this.__width, height: 91, opacity: 1 });
 		animate(200, this.__branding, { top: yEnd }, 700, "easeInOutQuad");
 
-		this.__logoTelluride.css({ top: -45, left: 49, opacity: 0, scale: 1.4 });
+		this.__logoTelluride.css({ top: -45, left: 0, opacity: 0, scale: 1.4 });
 		animate(200, this.__logoTelluride, { top: 0, opacity: 1, scale: 1 }, 700, "easeInOutQuad");
 
 		var banner = this;
@@ -94,11 +94,11 @@
 
 	// show cta 1
 	Banner.prototype.showCta1 = function () {
-		this.__ctaBG.css({ top: 516, right: 0, opacity: 0 });
-		this.__ctaOne.css({ top: 435, opacity: 1 });
-		this.__ctaLocation.css({ top: 520, opacity: 0 });
-		this.__ctaLodging.css({ top: 520, opacity: 0 });
-		this.__ctaTwo.css({ top: 536, opacity: 0 });
+		this.__ctaBG.css({ top: 532, right: 0, opacity: 0 });
+		this.__ctaOne.css({ top: 458, opacity: 1 });
+		this.__ctaLocation.css({ top: 529, opacity: 0 });
+		this.__ctaLodging.css({ top: 529, opacity: 0 });
+		this.__ctaTwo.css({ top: 544, opacity: 0 });
 		this.__cta.css({ top: 0, right: 0, opacity: 0, scale: 1, height: 600 });
 
 		animate(0, this.__cta, { opacity: 1 }, 1000, "easeOutQuart");
