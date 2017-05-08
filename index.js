@@ -84,3 +84,18 @@ $('.seven-twenty-eight-ninety').on('click', function(e) {
     conversionHeader.text('+ 728x90');
   }
 });
+
+$('.nine-seventy-two-fifty').on('click', function(e) {
+  e.preventDefault();
+
+  let conversionList = $('.nine-seventy-two-fifty-list')
+  let conversionHeader = $('.nine-seventy-two-fifty')
+
+  if( conversionList.attr('id') === 'hide' ) {
+    conversionList.attr('id', 'show');
+    conversionHeader.text('- 970x250');
+  } else {
+    conversionList.attr('id', 'hide');
+    conversionHeader.text('+ 970x250');
+  }
+});
